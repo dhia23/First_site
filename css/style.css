@@ -1,0 +1,974 @@
+/*Start variables*/
+:root{
+    --mycolor:#19c8fa;
+    --second_color:rgb(15 116 143/70%);
+}
+/*end variables*/
+/*start combonant*/
+.combonant{
+   text-align: center;
+   margin: 50px 0;
+}
+.combonant h2{
+    font-weight: normal;
+    margin-bottom: 50px;
+    position: relative;
+    text-transform: uppercase;
+
+}
+.combonant h2::before{
+    content: "";
+    position: absolute;
+    background-color: black;
+    width: 90px;
+    bottom: -25px;
+    height: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.combonant h2:after{
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    bottom: -29px;
+    left: 50%;
+    background-color: white;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    border: 2px solid black;
+} 
+.combonant p{
+    width: 50%;
+    margin: 0 auto;
+    color: #777;
+    font-size: 17px;
+}
+@media(max-width:768px){
+    .combonant p{
+        width: 100%;
+    }
+}
+
+/*end combonant*/
+
+/*Start Global Rules*/
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+body{
+    
+   font-family: 'Open Sans', sans-serif;
+  
+}
+
+/*end Global Rules*/
+ul{
+    list-style: none;
+}
+html {
+    scroll-behavior: smooth;
+}
+.container{
+    padding: 0 15px;
+
+}
+/*Small*/
+@media (min-width:768px){
+    .container{
+        width: 750px;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+}
+    
+
+/*Medium*/
+@media (min-width:992px){
+    .container{
+        width: 970px;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+}
+/*large*/
+@media (min-width:1200px){
+    .container{
+        width: 1170px;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+}
+/*Start Header*/
+header{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+header .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    min-height:98px ;
+    
+}
+header .container::before{
+    content: "";
+    position: absolute;
+    width: calc(100% - 30px);
+    background-color: #a2a2a2;
+    height: 1px;
+    bottom: -2px;
+    left: 15px;
+}
+nav{
+    display: flex;
+    justify-content: flex-end;
+    flex: 1;
+    align-items: center;
+    
+}
+.toggle-menu{
+    color: white;
+    font-size: 22px;
+    display: none;
+    margin-right: 10px;
+}
+@media(max-width:768px){
+    .toggle-menu{
+        display: block;
+    }
+    nav .toggle-menu:hover ~ ul{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.726);
+    }
+    nav .toggle-menu:hover ~ ul a{
+        padding:20px;
+    }
+}
+nav ul{
+    display: flex;
+    margin-right: 60px;
+    
+}
+@media (max-width:768px) {
+    nav ul{
+        display:none ;
+
+    }
+    
+}
+
+.logo img{
+    height: 50px;
+}
+nav ul a{
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 40px 10px;
+    font-size: 14px;
+    transition: .2s;
+}
+
+nav ul a:hover,
+nav ul a.active{
+    border-bottom: 2px solid var(--mycolor);
+    color: var(--mycolor);
+
+}
+nav a li{
+    color: white;
+    text-transform: uppercase;
+    transition: .3s;
+}
+nav ul a:hover li,
+nav ul a.active li{
+    color: var(--mycolor);
+}
+.search{
+    color: white;
+    width: 60px;
+    height: 30px;
+    position: relative;   
+    border-left: 1px solid #a2a2a2; 
+}
+nav .search i{
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
+    right: 0;
+    
+}
+
+/*end Header*/
+/*Start section*/
+section{
+    background-image: url(../images/adFxoz.jpg);
+    width: 100%;
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+section .transperent{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0/70%);
+}
+section .section_content{
+    position: absolute;
+    background-color: var(--second_color);
+    top: 50%;
+    transform: translateY(-50%);
+    min-width: 50%;
+    padding: 40px;
+    display: flex;
+    justify-content: flex-end;
+}
+@media (max-width:768px) {
+    section .section_content{
+        width: 100%;
+        display: block;
+    }
+    
+}
+section .section_content div{
+    color: white;
+    max-width: 500px;
+    
+}
+
+section .section_content div h2{
+        font-size: 32px;
+        font-weight: normal;
+        line-height: 35px;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+}
+section .section_content div p{
+    font-size: 14px;
+    line-height: 2;
+}
+section .change-background{
+    position: absolute;
+    color: white;
+    top: 50%;
+    transition: translateY(-50%);
+}
+section .fa-angle-left{
+    left: 30px;
+
+}
+section .fa-angle-right{
+    right: 30px;
+}
+section ul{
+    display: flex;
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+section li{
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    border: 2px solid var(--mycolor);
+    margin-left: 5px;
+}
+section li:nth-child(2){
+    background-color: var(--mycolor);
+}
+
+/*end section*/
+/*start servives_section*/
+.services_section .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit , minmax(300px , 1fr));
+    gap: 20px;
+}
+.services_section .content{
+    margin-bottom: 50px;
+    display: flex;
+}
+
+.services_section .content .text{
+        margin-left: 40px;
+
+}
+.services_section i{
+    font-size: xx-large;
+    color:black
+
+}
+.services_section h4{
+    color: var(--mycolor);
+    margin-bottom: 25px;
+}
+
+/*end servives_section*/
+/*start designe_section*/
+.designe{
+    background-image: url(../images/20352933.jpg);
+    width: 100%;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+.designe .content{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(0, -50%);
+    display: flex;
+    flex-direction: column;
+    min-width: 40%;
+    background-color: var(--second_color);
+    padding: 20px;
+}
+.designe .content .text{
+    margin:10px 0;
+    color: white;
+}
+.designe span{
+    margin-left: 15px;
+}
+.designe h3 {
+    margin: 40px 0;
+    color: white;
+    font-weight: normal;
+    font-size: x-large;
+    text-transform: uppercase;
+}
+@media(max-width:768px){
+    .designe .content{
+    width: 100%;
+    }
+}
+/*end designe_section*/
+/*start chose*/
+.chose {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    max-width: 100%;
+    margin-bottom: 50px;
+}
+.chose ul{
+   display: flex;
+}
+.chose li{
+    text-align: center;
+    padding: 20px;
+    transition: .3s;
+    transition-timing-function: linear;
+    text-transform: uppercase;
+}
+@media(max-width:768px){
+    .chose li {
+        padding: 13px;
+    }
+}
+.chose li:hover,
+.chose li:first-child{
+    background-color: var(--mycolor);
+    color: white;
+}
+
+/*end chose*/
+/*start portfolio*/
+.portfolio{
+    display: flex;
+    flex-wrap: wrap;
+}
+.portfolio .box_img{
+   flex-basis: 25%;
+   position: relative;
+   overflow: hidden;
+   transition: .3s;
+
+}
+@media(max-width:767px){
+    .portfolio .box_img{
+        flex-basis: 100%;
+     }
+
+}
+@media (min-width:768px) and (max-width:992px){
+    .portfolio .box_img{
+        flex-basis: 50%;
+     }
+}
+.portfolio .box_img img{
+    width: 100%;
+    height: 200px;
+    transition: .3s;
+}
+.portfolio .box_img:hover img{
+    transform: rotate(3deg) scale(1.1);
+}
+@media(min-width:768px) and (max-width:992px){
+    .portfolio .box_img img{
+        height: 300px;
+     }
+
+}
+@media (max-width:768px){
+    .portfolio .box_img img{
+        height:400px;
+        
+     }
+}
+.portfolio .text{
+    position: absolute;
+    bottom: -100%;
+    padding: 10px;
+    background-color: white;
+    width: 100%;
+
+}
+.portfolio .box_img:hover .text{
+    bottom: 0;
+}
+.portfolio .text h4{
+    font-weight: normal;
+    font-size: x-large;
+}
+.portfolio .text p{
+    margin-top: 4px;
+    color: var(--mycolor);
+}
+
+.portfolio button{
+    text-transform: uppercase;
+    display: block;
+    margin: 20px auto;
+    padding: 5px 40px;
+    border: none;
+    background-color: var(--mycolor);
+    color: white;
+}
+
+/*end portfolio*/
+/*start about*/
+.about{
+    background-image: url(../images/hello.jpg);
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px;
+}
+.about .container{
+    display: flex;
+    background-color: var(--second_color);
+}
+@media (max-width:767px) {
+    .about .container{
+        position: absolute;
+        width: 100%;
+    }
+}
+.about .box{
+    flex: 1;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+@media (max-width:767px){
+    .about .box{
+        padding: 10px 5px;
+    }
+}
+.about .container .box div{
+    margin: 20px 0;
+    font-size: xx-large;
+    margin: 20px 0 10px;
+    font-weight: 400;
+
+}
+@media (max-width:767px){
+
+    .about .container .box div{
+        font-size: x-large;
+    }
+}
+.about .container .box i{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    line-height: 2.2;
+    background-color: black;
+    text-align: center;
+
+}
+.about .container .box p{
+    font-size: small;
+    text-align: center;
+}
+/*start about*/
+/*start skills*/
+.skills .container{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.skills .box{
+    flex-basis: 45%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+@media (max-width:992px){
+    .skills .box{
+        flex-basis: 100%;
+        margin-top:30px
+    }
+}
+.skills .box >h4{
+    font-weight: normal;
+    font-size: x-large;
+    text-transform: uppercase;
+}
+.skills .box >p{
+    color: #777;
+    margin: 15px 0;
+    text-align: center;
+}
+.skills .box .line{
+    display: flex;
+    margin: 10px 0;
+}
+.skills .box .line img{
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.skills .box .line p{
+    border-bottom: 4px solid #ccc;
+    padding-bottom: 15px;
+} 
+.skills ul{
+    display: flex;
+}
+.skills ul li{
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid var(--mycolor);
+    margin-right: 3px;
+}
+.skills ul li:nth-child(2){
+   background-color: var(--mycolor);
+
+}
+.skills .box .progresse{
+    width: 100%;
+
+}
+
+.skills .box .prog >span{
+    text-align: start;
+    text-transform: uppercase;
+
+}
+.skills .box .prog div{
+    width: 100%;
+    height: 30px;
+    background-color: #ccc;
+    margin-top: 10px;
+    position: relative;
+    margin-bottom: 10px;
+
+}
+.skills .box .prog div span{
+    height: 100%;
+    position: absolute;
+    background-color: var(--mycolor);
+
+}
+.skills .box .prog div span:after{
+    content: attr(data-progresse);
+    position: absolute;
+    width: 35px;
+    height: 20px;
+    color: white;
+    background-color: black;
+    border-radius: 4px;
+    text-align: center;
+    right: -17px;
+    top: -25px;
+
+
+}
+.skills .box .prog .active span::before{
+    content: "";
+    position: absolute;
+    border-style: solid;
+    border-width: 5px;
+    border-color: black transparent transparent transparent;
+    top: -5px;
+    right: -4px;
+}
+
+/*end skills*/
+/*start accumsan*/
+.accumsan{
+    margin: 100px 0 0 0;
+    background-image: url(../images/dhia3.jpg);
+    width: 100%;
+    height: 400px;
+    background-size: cover;
+    background-position: bottom;
+    position: relative;
+}
+.accumsan p{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: large;
+    width: 70%;
+    color: white;
+}
+
+
+/*end accumsan*/
+/*start pricing*/
+.pricing .container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+}
+.pricing .box{
+    flex-basis: calc(85% / 4);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+}
+@media(max-width:992px){
+    .pricing .box{
+        flex-basis: 100%;
+        margin: 50px;
+    
+    }
+}
+.pricing .box .price{
+    text-align: center;
+    border-top: 2px solid var(--mycolor);
+    border-bottom: 2px solid var(--mycolor);
+    width: 100%;
+}
+.pricing .box .price h4{
+    font-weight: normal;
+    text-transform: uppercase;
+    margin-top: 15px;
+
+}
+.pricing .box .price h1{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    position: relative;
+    
+
+}
+.pricing .box .price h1 span:first-child i{
+    font-size: small;
+    position: absolute;
+    left: 35%;
+}
+@media(min-width:767px) and (max-width:992px){
+    .pricing .box .price h1 span:first-child i{
+        left: 45%;
+    }
+}
+.pricing .box .price h1 span:nth-child(2){
+    position: absolute;
+    font-size: small;
+    bottom: 0;
+}
+.pricing .box .caract{
+    border-bottom: 2px solid var(--mycolor);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.pricing .box .caract h5{
+    padding: 15px 0;
+    border-bottom: 2px solid var(--mycolor);
+    width: 100px;
+    text-align: center;
+
+} 
+.pricing .box .caract h5:last-child{
+    border: none;
+}
+.pricing button{
+    display: block;
+    margin: 19px auto;
+    background-color: transparent;
+    border: 2px solid var(--mycolor);
+    outline: none;
+    color: black;
+    padding: 10px 30px;
+}
+.contact_us{
+    margin-top: 30px;
+
+}
+.contact_us h4{
+    font-size: small;
+}
+.contact_us button{
+    background-color: var(--mycolor);
+    color: white;
+}
+/*end pricing*/
+/*start mailing*/
+.mailing{
+    background-image: url(../images/mailing.jpg);
+    background-position: center;
+    background-size: cover;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 100%;
+    height: 200px;
+    position: relative;
+}
+.mailing::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0/70%);
+
+}
+.mailing .container{
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+@media (max-width:992px){
+    .mailing .container{
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+.mailing .container form{
+    display: flex;
+    position: relative;
+    width: 500px;
+    max-width: 100%;
+}
+.mailing .container form i{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 25px;
+    color: white;
+    
+}
+
+
+.mailing .container input[type=email]{
+    width: calc(100% - 130px);
+    padding: 20px 20px 20px 60px;
+    background-color: transparent;
+    border: 1px solid var(--mycolor);
+    caret-color: var(--mycolor);
+    border-right: none;
+}
+.mailing .container input[type=email]:focus,
+.mailing .container input[type=submit]{
+    outline: none;
+}
+.mailing .container input[type=submit]{
+ 
+    background-color: var(--mycolor);
+    padding: 10px 20px;
+    color: white;
+    margin-left: -5px;
+    border: 1px solid var(--mycolor);
+    width: 130px;
+    text-transform: uppercase;
+    border-left: none;
+}
+.mailing form ::placeholder{
+ color: white;
+}
+.mailing .container p{
+    color: #ccc;
+    line-height: 1.5;
+    margin-left: 50px;
+    width: 50%;
+}
+@media (max-width:992px){
+    .mailing .container p{
+        margin-top: 30px;
+        text-align: center;
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+/*end mailing*/
+/*start contact us*/
+.contact_us .container{
+    display: flex;
+}
+@media (max-width:992px){
+    .contact_us .container{
+        flex-direction: column;
+        padding-left: 10px;
+    }
+}
+.contact_us .container .content{
+    flex-grow: 1;
+}
+.contact_us .container input[type=email],
+.contact_us .container input[type=text],
+.contact_us .container textarea{
+    display: block;
+    width: 100%;
+    height: 60px;
+    margin-bottom: 25px;
+    padding-left: 20px;
+    caret-color: var(--mycolor);
+}
+.contact_us .container ::placeholder{
+    color: black;
+}
+.contact_us .container textarea{
+    padding-top: 10px;
+    height: 300px;
+}
+.contact_us .container input[type=submit]{
+    text-transform: uppercase;
+    background-color: var(--mycolor);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-left: auto;
+    display: block;
+}
+.contact_us .container .information{
+    padding-left: 20px;
+}
+@media (max-width:992px){
+    .contact_us .container .information{
+        width: fit-content;
+        margin: 0 auto 20px auto;
+        text-align: center;
+        order: -1;
+    }
+}
+.contact_us .container .information h4{
+    font-size: large;
+    font-weight: normal;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+.contact_us .container .information span{
+    display: block;
+    color: #777;
+    margin-bottom: 20px;
+    padding-left: 10px;
+}
+@media (max-width:992px){
+    .contact_us .container .information span{
+        padding: 0;
+    }
+}
+.contact_us .container .information span:nth-child(2){
+    margin-bottom: 100px;
+}
+@media (max-width:992px){
+    .contact_us .container .information span:nth-child(2){
+        margin-bottom: 20px;
+    }
+}
+/*end contact us*/
+/*start footer*/
+footer{
+    background-image: url(../images/subscribe.jpg);
+    background-position: top;
+    background-size:cover ;
+    position: relative;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 60px;
+}
+footer::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0/70%);
+}
+footer .container{
+    width: fit-content;
+    position: relative;
+    text-align: center;
+    color: white;
+}
+footer .container h1{
+    font-weight: normal;
+    text-transform: uppercase;
+    margin:30px 0 0;
+    padding-bottom: 30px;
+    padding: 0 20px 30px 20px;
+    border-bottom: 3px solid #ddd;
+}
+footer .container .icons{
+    margin-top: 15px;
+}
+footer .container .icons a:not(.active){
+    padding-left: 30px;
+
+
+}
+footer .container .icons a i {
+    font-size: xx-large;
+    color: white;
+}
+footer .container p{
+    margin-top: 20px;
+    color: #ddd;
+
+}
+footer .container p span{
+    color: var(--mycolor);
+    font-weight: bold;
+}
+
+/*end footer*/
